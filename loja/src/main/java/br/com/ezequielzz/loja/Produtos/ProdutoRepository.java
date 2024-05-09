@@ -1,0 +1,7 @@
+package br.com.ezequielzz.loja.Produtos;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface ProdutoRepository extends CrudRepository<Produto, Integer> {
+    
+}
