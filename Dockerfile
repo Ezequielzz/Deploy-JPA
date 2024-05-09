@@ -3,7 +3,7 @@ FROM ubuntu:latest AS build
 
 # Instale o OpenJDK 22
 RUN apt-get update
-RUN apt-get install openjdk-22-jdk -y
+RUN apt-get install openjdk-17-jdk -y
 RUN apt-get install maven -y 
 
 # Copie o código-fonte para o contêiner
@@ -13,7 +13,7 @@ COPY . .
 RUN mvn clean install
 
 # Estágio de execução
-FROM openjdk:22-jdk-slim
+FROM openjdk:17-jdk-slim
 
 # Exponha a porta 8080
 EXPOSE 8080
